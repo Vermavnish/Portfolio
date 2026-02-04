@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Avnish Verma | Software Developer & CSE Undergrad (RKGIT)</title>
+    
+    <meta name="description" content="Official portfolio of Avnish Verma, a Computer Science student at RKGIT. Specializing in C++, Data Structures (DSA), and Full Stack Development. View my GitHub and Projects.">
+    <meta name="keywords" content="Avnish Verma, Avnish Verma Dev, Avnish Kumar Verma, Avnish Verma RKGIT, Software Developer, CSE Undergraduate, RKGIT Student, Avnish Verma Portfolio, C++ Developer India">
+    <meta name="author" content="Avnish Verma">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:title" content="Avnish Verma - Developer Portfolio">
+    <meta property="og:description" content="CSE Undergrad @ RKGIT | C++ & DSA Specialist. Check out my projects.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/avnish-verma">
+    <meta property="og:type" content="website">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Avnish Verma",
+      "alternateName": ["Avnish Kumar Verma", "Avnish Verma Dev"],
+      "url": "https://avnish-verma.github.io/portfolio",
+      "image": "https://avatars.githubusercontent.com/u/avnish-verma",
+      "jobTitle": "Student & Software Developer",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Raj Kumar Goel Institute of Technology (RKGIT)"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/avnis1",
+        "https://github.com/avnish-verma",
+        "https://leetcode.com/u/Avnish-verma",
+        "https://youtube.com/@Avnish-verma-dev"
+      ]
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ==========================================
+           2. CORE AESTHETICS (ANTI-AI LOOK)
+        ========================================== */
+        :root {
+            --bg-dark: #080808;
+            --bg-panel: #121212;
+            --text-main: #ECECEC;
+            --text-muted: #888888;
+            --accent: #D4FF00; /* Acid Green - The Human Touch */
+            --accent-glow: rgba(212, 255, 0, 0.15);
+            --border-light: rgba(255, 255, 255, 0.08);
+            --font-display: 'Space Grotesk', sans-serif;
+            --font-code: 'JetBrains Mono', monospace;
+            --radius: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: var(--font-display);
+            overflow-x: hidden;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        /* NOISE OVERLAY (Texture) */
+        .noise-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 9999; opacity: 0.05;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='1'/%3E%3C/svg%3E");
+        }
+
+        /* UTILITIES */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+        /* NAVIGATION */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; height: 80px;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 5%; background: rgba(8, 8, 8, 0.85);
+            backdrop-filter: blur(12px); z-index: 100;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .logo { font-family: var(--font-code); font-weight: 700; font-size: 1.2rem; letter-spacing: -1px; }
+        .logo span { color: var(--accent); }
+        
+        .nav-menu { display: flex; gap: 2rem; list-style: none; }
+        .nav-link { font-size: 0.9rem; color: var(--text-muted); font-family: var(--font-code); position: relative; }
+        .nav-link:hover { color: var(--text-main); }
+        .nav-link::before { content: '//'; color: var(--accent); opacity: 0; margin-right: 5px; transition: 0.3s; }
+        .nav-link:hover::before { opacity: 1; }
+
+        .hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; z-index: 102; }
+        .bar { width: 30px; height: 2px; background: var(--text-main); transition: 0.3s; }
+
+        /* HERO SECTION */
+        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-top: 80px; position: relative; }
+        #interactive-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        
+        .hero-badge {
+            display: inline-flex; align-items: center; padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-light);
+            border-radius: 50px; font-family: var(--font-code); font-size: 0.85rem; margin-bottom: 2rem; width: fit-content;
+        }
+        .status-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; margin-right: 10px; box-shadow: 0 0 10px var(--accent); animation: pulse 2s infinite; }
+        
+        h1 { font-size: clamp(3rem, 8vw, 6rem); line-height: 1; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -2px; }
+        .hero-desc { max-width: 600px; font-size: 1.2rem; color: var(--text-muted); margin-bottom: 3rem; }
+        
+        .btn-group { display: flex; gap: 1.5rem; }
+        .btn { padding: 14px 32px; border-radius: 6px; font-family: var(--font-code); font-weight: 700; font-size: 0.9rem; cursor: pointer; transition: 0.2s; border: 0; }
+        .btn-primary { background: var(--text-main); color: var(--bg-dark); border: 1px solid var(--text-main); }
+        .btn-primary:hover { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 20px var(--accent-glow); }
+        .btn-secondary { background: transparent; color: var(--text-main); border: 1px solid var(--border-light); }
+        .btn-secondary:hover { border-color: var(--text-main); }
+
+        /* SECTIONS & BENTO GRID */
+        .section-padding { padding: 100px 0; }
+        .section-header { margin-bottom: 4rem; }
+        .section-title { font-size: 2.5rem; margin-bottom: 1rem; }
+        .section-subtitle { font-family: var(--font-code); color: var(--accent); }
+
+        .bento-grid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(2, 300px); gap: 20px; }
+        .bento-card {
+            background: var(--bg-panel); border: 1px solid var(--border-light); border-radius: var(--radius);
+            padding: 2rem; display: flex; flex-direction: column; justify-content: space-between; transition: 0.3s;
+            overflow: hidden;
+        }
+        .bento-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.2); }
+        
+        .card-lg { grid-column: span 2; }
+        .card-tall { grid-row: span 2; }
+        .card-icon { font-size: 2rem; color: var(--accent); margin-bottom: 1rem; }
+        .card-title { font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .card-desc { color: var(--text-muted); font-size: 0.95rem; }
+        .tech-tags { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; }
+        .tag { font-size: 0.75rem; font-family: var(--font-code); padding: 4px 10px; background: rgba(255,255,255,0.05); border-radius: 4px; color: var(--text-muted); }
+
+        /* CONTACT FORM AREA */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: center; }
+        .contact-text { color: var(--text-muted); margin-bottom: 2rem; font-size: 1.1rem; }
+        .info-item { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; color: var(--text-main); font-family: var(--font-code); font-size: 0.9rem; }
+        .info-item i { color: var(--accent); font-size: 1.2rem; }
+        
+        .contact-form { background: var(--bg-panel); padding: 2.5rem; border: 1px solid var(--border-light); border-radius: var(--radius); }
+        .form-group { margin-bottom: 1.5rem; }
+        input, textarea {
+            width: 100%; padding: 15px; background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-light); border-radius: 6px;
+            color: var(--text-main); font-family: var(--font-code); font-size: 0.9rem; transition: 0.3s;
+        }
+        input:focus, textarea:focus { border-color: var(--accent); background: rgba(255, 255, 255, 0.05); }
+
+        /* FOOTER */
+        footer { border-top: 1px solid var(--border-light); padding: 4rem 0; margin-top: 4rem; text-align: center; }
+        .social-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; }
+        .social-links a { font-size: 1.5rem; color: var(--text-muted); transition: 0.3s; }
+        .social-links a:hover { color: var(--accent); transform: scale(1.1); }
+        .footer-credit { font-family: var(--font-code); color: var(--text-muted); font-size: 0.8rem; }
+
+        /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 1024px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+            .card-lg { grid-column: span 2; }
+            .card-tall { grid-row: span 1; }
+        }
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+            .nav-menu {
+                position: fixed; top: 0; right: -100%; width: 75%; height: 100vh;
+                background: #111; flex-direction: column; justify-content: center;
+                align-items: center; transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                border-left: 1px solid var(--border-light);
+            }
+            .nav-menu.active { right: 0; }
+            h1 { font-size: 3rem; }
+            .bento-grid { grid-template-columns: 1fr; }
+            .card-lg, .card-tall { grid-column: span 1; }
+            .btn-group { flex-direction: column; }
+            .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+        }
+        
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(212, 255, 0, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(0,0,0,0); } 100% { box-shadow: 0 0 0 0 rgba(0,0,0,0); } }
+    </style>
+</head>
+<body>
+
+    <div class="noise-overlay"></div>
+    <canvas id="interactive-bg"></canvas>
+
+    <nav>
+        <a href="#" class="logo">AVNISH<span>_VERMA</span></a>
+        
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="#about" class="nav-link">ABOUT</a></li>
+            <li><a href="#projects" class="nav-link">PROJECTS</a></li>
+            <li><a href="#contact" class="nav-link">CONTACT</a></li>
+            <li><a href="https://github.com/avnish-verma" target="_blank" class="nav-link">GITHUB</a></li>
+        </ul>
+
+        <div class="hamburger" id="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <section class="container hero" id="about">
+        <div class="hero-badge">
+            <span class="status-dot"></span>
+            Solving Problems @ RKGIT
+        </div>
+        
+        <h1>AVNISH <span style="color:var(--text-muted)">VERMA.</span><br>SOFTWARE <span style="color:var(--accent)">DEV.</span></h1>
+        
+        <p class="hero-desc">
+            The official portfolio of <b>Avnish Kumar Verma</b>. A Computer Science Undergraduate building scalable systems in C++ and MERN Stack. 
+            Bridging the gap between academic theory and real-world deployment.
+        </p>
+        
+        <div class="btn-group">
+            <a href="#projects" class="btn btn-primary">VIEW WORK</a>
+            <a href="#contact" class="btn btn-secondary">GET IN TOUCH</a>
+        </div>
+    </section>
+
+    <section class="container section-padding" id="projects">
+        <div class="section-header">
+            <span class="section-subtitle">01. THE ARCHIVES</span>
+            <h2 class="section-title">Selected Works</h2>
+        </div>
+
+        <div class="bento-grid">
+            
+            <a href="https://youtube.com/@Avnish-verma-dev" target="_blank" class="bento-card card-lg">
+                <i class="fab fa-youtube card-icon"></i>
+                <div>
+                    <h3 class="card-title">@Avnish-verma-dev</h3>
+                    <p class="card-desc">
+                        Documenting the journey of a Tier-3 college student cracking global standards. 
+                        Daily coding logs, DSA tutorials, and tech exploration.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tag">Content Creation</span>
+                        <span class="tag">Teaching</span>
+                        <span class="tag">Community</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://github.com/avnish-verma" target="_blank" class="bento-card card-tall">
+                <i class="fas fa-code-branch card-icon"></i>
+                <div>
+                    <h3 class="card-title">DSA Archives</h3>
+                    <p class="card-desc">
+                        Optimized C++ solutions for LeetCode Medium/Hard problems. 
+                        Focus on Arrays, Linked Lists, and Binary Trees.
+                    </p>
+                    <div class="tech-tags">
+                        <span class="tag">C++</span>
+                        <span class="tag">STL</span>
+                        <span class="tag">Algorithms</span>
+                    </div>
+                </div>
+            </a>
+
+            <div class="bento-card">
+                <i class="fas fa-laptop-code card-icon"></i>
+                <h3 class="card-title">Portfolio v2</h3>
+                <p class="card-desc">
+                    Dark-mode, bento-grid personal site with HTML Canvas animations.
+                </p>
+                <div class="tech-tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">SEO</span>
+                    <span class="tag">Canvas API</span>
+                </div>
+            </div>
+
+            <div class="bento-card">
+                <i class="fas fa-database card-icon"></i>
+                <h3 class="card-title">Student Manager</h3>
+                <p class="card-desc">
+                    WIP: Full stack dashboard for tracking attendance and assignments.
+                </p>
+                <div class="tech-tags">
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">React</span>
+                    <span class="tag">Node.js</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container section-padding" id="contact">
+        <div class="section-header">
+            <span class="section-subtitle">02. GET IN TOUCH</span>
+            <h2 class="section-title">Let's Connect</h2>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info">
+                <p class="contact-text">
+                    Whether you have a question about code, want to discuss a project, or just say hi, my inbox is open.
+                </p>
+                
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>a33010171@gmail.com</span>
+                </div>
+                <div class="info-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin.com/in/avnis1</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Ghaziabad, India</span>
+                </div>
+            </div>
+
+            <form action="https://formsubmit.co/a33010171@gmail.com" method="POST" class="contact-form">
+                
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" value="New Portfolio Message!">
+                
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                </div>
+
+                <div class="form-group">
+                    <input type="tel" name="phone" placeholder="Phone Number (Optional)">
+                </div>
+
+                <div class="form-group">
+                    <textarea name="message" rows="5" placeholder="Why do you want to connect? (Project / Hiring / Query)" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary" style="width: 100%;">SEND MESSAGE</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/avnish-verma"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/avnis1"><i class="fab fa-linkedin"></i></a>
+            <a href="https://youtube.com/@Avnish-verma-dev"><i class="fab fa-youtube"></i></a>
+            <a href="https://leetcode.com/u/Avnish-verma"><i class="fas fa-code"></i></a>
+        </div>
+        <p class="footer-credit">
+            DESIGNED & ENGINEERED BY AVNISH VERMA<br>
+            <span style="color:var(--text-muted); font-size:0.7rem;">NO AI TEMPLATES WERE HARMED IN MAKING THIS.</span>
+        </p>
+    </footer>
+
+    <script>
+        // 1. MOBILE MENU TOGGLE
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active'); // You can add CSS animation for X icon here
+        });
+
+        // Close menu when link clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+            });
+        });
+
+        // 2. CANVAS PARTICLES (MOUSE INTERACTION)
+        const canvas = document.getElementById('interactive-bg');
+        const ctx = canvas.getContext('2d');
+        let width, height, particles = [];
+        let mouse = { x: null, y: null, radius: 150 };
+
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
+
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+            initParticles();
+        }
+
+        class Particle {
+            constructor(x, y, size, color) {
+                this.x = x; this.y = y; this.size = size; this.color = color;
+                this.baseX = x; this.baseY = y;
+            }
+            update() {
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx*dx + dy*dy);
+                let forceDirectionX = dx / distance;
+                let forceDirectionY = dy / distance;
+                let force = (mouse.radius - distance) / mouse.radius;
+
+                if (distance < mouse.radius) {
+                    this.x -= forceDirectionX * force * 5;
+                    this.y -= forceDirectionY * force * 5;
+                } else {
+                    if (this.x !== this.baseX) this.x -= (this.x - this.baseX)/10;
+                    if (this.y !== this.baseY) this.y -= (this.y - this.baseY)/10;
+                }
+                
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+
+        function initParticles() {
+            particles = [];
+            // Particle density control
+            let numParticles = (width * height) / 9000; 
+            for (let i = 0; i < numParticles; i++) {
+                let size = (Math.random() * 2) + 1;
+                let x = Math.random() * width;
+                let y = Math.random() * height;
+                particles.push(new Particle(x, y, size, 'rgba(255, 255, 255, 0.2)'));
+            }
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => p.update());
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+        animate();
+
+        // 3. CONSOLE EASTER EGG
+        console.log("%c BRIDGE-X SYSTEM ONLINE ", "background: #000; color: #D4FF00; font-size: 20px; font-family: monospace; border: 2px solid #D4FF00; padding: 10px;");
+        console.log("Welcome. Yes, this code is optimized for humans.");
+    </script>
+</body>
+</html>
